@@ -9,7 +9,6 @@ import FeeCollection from "./pages/FeeCollection.jsx";
 import Expenses from "./pages/Expenses.jsx";
 import Reports from "./pages/Reports.jsx";
 import AIFeatures from "./pages/AIFeatures.jsx";
-import PresentationPage from "./pages/Presentation.jsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -35,7 +34,6 @@ const App = () => (
           <Route path="/expenses" element={<AppLayout><Expenses /></AppLayout>} />
           <Route path="/reports" element={<AppLayout><Reports /></AppLayout>} />
           <Route path="/ai-features" element={<AppLayout><AIFeatures /></AppLayout>} />
-          <Route path="/presentation" element={<AppLayout><PresentationPage /></AppLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

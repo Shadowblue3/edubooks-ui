@@ -6,7 +6,6 @@ import {
   Receipt,
   FileText,
   Sparkles,
-  Presentation,
   Settings,
   Menu,
   X,
@@ -19,7 +18,6 @@ const navItems = [
   { path: "/expenses", label: "Expenses", icon: FileText },
   { path: "/reports", label: "Reports", icon: BookOpen },
   { path: "/ai-features", label: "AI & Automation", icon: Sparkles },
-  { path: "/presentation", label: "Presentation", icon: Presentation },
 ];
 
 export default function AppSidebar() {
