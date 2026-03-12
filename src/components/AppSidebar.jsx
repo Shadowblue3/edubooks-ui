@@ -32,21 +32,24 @@ export default function AppSidebar() {
       }`}
     >
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 py-5 border-b border-sidebar-border">
-        <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center flex-shrink-0">
-          <GraduationCap className="w-5 h-5 text-sidebar-primary-foreground" />
-        </div>
+      <div className={`flex items-center gap-3 px-4 py-5 border-b border-sidebar-border ${collapsed ? "flex-col" : "flex-row"}`}>
         {!collapsed && (
-          <div className="animate-slide-in">
-            <h1 className="text-sm font-bold text-sidebar-foreground font-display">
-              EduBooks.ai
-            </h1>
-            <p className="text-xs text-sidebar-foreground/50">School Finance</p>
+          <div className="flex items-center gap-3 flex-1 overflow-hidden">
+            <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center flex-shrink-0">
+              <GraduationCap className="w-5 h-5 text-sidebar-primary-foreground" />
+            </div>
+            <div className="animate-slide-in min-w-0">
+              <h1 className="text-sm font-bold text-sidebar-foreground font-display truncate">
+                EduBooks.ai
+              </h1>
+              <p className="text-xs text-sidebar-foreground/50 truncate">School Finance</p>
+            </div>
           </div>
         )}
+        
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="ml-auto text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors"
+          className={`flex items-center justify-center h-8 w-8 rounded-md border border-sidebar-border bg-sidebar-accent/50 text-white hover:bg-sidebar-accent transition-all ${collapsed ? "mt-2" : "ml-auto"}`}
         >
           {collapsed ? <Menu className="w-4 h-4" /> : <X className="w-4 h-4" />}
         </button>
